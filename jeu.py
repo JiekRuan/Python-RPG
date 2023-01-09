@@ -3,10 +3,11 @@ from arcade.gui import UIManager, UITextureButton, UIOnClickEvent
 import arcade.gui
 from arcade.gui.widgets import UITextArea, UITexturePane
 
+# La fenêtre principale qui va s'afficher en premier contenant le lien vers les autres pages
 
 class GameWindow(arcade.Window):
     def __init__(self):
-        super().__init__()
+        super().__init__(1200,800,'python rpg')
         self.selected_skill = skills[0]
         self.game_view = GameView()
         self.inventory_view = InventoryView()
@@ -22,9 +23,9 @@ class GameView(arcade.View):
         self.HUD_camera = arcade.Camera()
         self.manager = arcade.gui.UIManager()
 
-        chest = arcade.load_texture('png/chest.png')
-        open_chest = arcade.load_texture('png/open_chest.png')
-        self.inventory_button = arcade.gui.UITextureButton(750,550,  texture=chest, texture_hovered= open_chest)
+        chest = arcade.load_texture('asset/chest.png')
+        open_chest = arcade.load_texture('asset/open_chest.png')
+        self.inventory_button = arcade.gui.UITextureButton( 1150, 750,  texture=chest, texture_hovered= open_chest)
         self.inventory_button.on_click = self.inventory_button_clicked
         self.manager.add(self.inventory_button)
         self.skill_icon = arcade.load_texture(self.window.selected_skill.filename)
@@ -52,7 +53,7 @@ class GameView(arcade.View):
         self.HUD_camera.use()
         self.manager.draw()
         arcade.set_background_color(arcade.color.WENGE)
-        arcade.draw_scaled_texture_rectangle(457, 520, texture=self.skill_icon, scale=0.3)
+        #arcade.draw_scaled_texture_rectangle(457, 520, texture=self.skill_icon, scale=0.3)
  
 
 
@@ -61,16 +62,16 @@ class InventoryView(arcade.View):
         super().__init__()
         self.manager = arcade.gui.UIManager()
 
-        cross = arcade.load_texture('png/cross.png')
-        cross_hovered = arcade.load_texture('png/cross_hovered.png')
+        cross = arcade.load_texture('asset/cross.png')
+        cross_hovered = arcade.load_texture('asset/cross_hovered.png')
 
-        self.cross_button = arcade.gui.UITextureButton(750,550,  texture=cross, texture_hovered= cross_hovered)
+        self.cross_button = arcade.gui.UITextureButton(1150, 750,  texture=cross, texture_hovered= cross_hovered)
 
 
         self.cross_button.on_click = self.cross_button_clicked
         self.manager.add(self.cross_button)
 
-        bg_tex = arcade.load_texture('png/panel_brown.png')
+        bg_tex = arcade.load_texture('asset/panel_brown.png')
 
         self.skill_title = UITextArea(
             x= 100,
@@ -169,12 +170,12 @@ class MenuView(arcade.View):
         super().__init__()
         self.manager = arcade.gui.UIManager()
 
-        play = arcade.load_texture('png/play.png')
-        play_hovered = arcade.load_texture('png/play_hovered.png')
-        settings = arcade.load_texture('png/settings.png')
-        settings_hovered = arcade.load_texture('png/settings_hovered.png')
-        quit = arcade.load_texture('png/quit.png')
-        quit_hovered = arcade.load_texture('png/quit_hovered.png')
+        play = arcade.load_texture('asset/play.png')
+        play_hovered = arcade.load_texture('asset/play_hovered.png')
+        settings = arcade.load_texture('asset/settings.png')
+        settings_hovered = arcade.load_texture('asset/settings_hovered.png')
+        quit = arcade.load_texture('asset/quit.png')
+        quit_hovered = arcade.load_texture('asset/quit_hovered.png')
 
         self.play_button = arcade.gui.UITextureButton(286,401,  texture= play, texture_hovered= play_hovered)
         self.settings_button = arcade.gui.UITextureButton(245,278,  texture= settings, texture_hovered= settings_hovered)
@@ -212,10 +213,10 @@ class SettingsView(arcade.View):
         super().__init__()
         self.manager = arcade.gui.UIManager()
 
-        back = arcade.load_texture('png/back.png')
-        back_hovered = arcade.load_texture('png/back_hovered.png')
-        bindings = arcade.load_texture('png/bindings.png')
-        bindings_hovered = arcade.load_texture('png/bindings_hovered.png')
+        back = arcade.load_texture('asset/back.png')
+        back_hovered = arcade.load_texture('asset/back_hovered.png')
+        bindings = arcade.load_texture('asset/bindings.png')
+        bindings_hovered = arcade.load_texture('asset/bindings_hovered.png')
 
         self.back_button = arcade.gui.UITextureButton(286,105,  texture=back, texture_hovered= back_hovered)
         self.bindings_button = arcade.gui.UITextureButton(245,320,  texture=bindings, texture_hovered= bindings_hovered)
@@ -247,8 +248,8 @@ class KeyBindingsView(arcade.View):
         super().__init__()
         self.manager = arcade.gui.UIManager()
 
-        back = arcade.load_texture('png/back.png')
-        back_hovered = arcade.load_texture('png/back_hovered.png')
+        back = arcade.load_texture('asset/back.png')
+        back_hovered = arcade.load_texture('asset/back_hovered.png')
 
         self.back_button = arcade.gui.UITextureButton(286,105,  texture=back, texture_hovered= back_hovered)
 
@@ -292,8 +293,8 @@ class Skill:
         self.description = description
         self.effect = effect
         self.cost = cost 
-        self.filename = f"png/{self.name}.png"
-        self.fileaname_hovered = f"png/{self.name}_hovered.png"
+        self.filename = f"asset/{self.name}.png"
+        self.fileaname_hovered = f"asset/{self.name}_hovered.png"
 
 """you used...that gives you..."""       
 
@@ -355,6 +356,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
