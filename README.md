@@ -12,6 +12,14 @@
 
 <hr>
 
+## Installation 
+
+Nous avons décider d'utiliser pour le projet *python arcade*, pour le bon fonctionnement du jeu, vous devez installer le package *arcade* sur pycharm ou l'extension python sur Visual Studio Code.
+
+[Voici un lien pour l'installation de Python arcade](https://api.arcade.academy/en/latest/install/index.html)
+
+<hr>
+
 <div align=center>
 
 ## `Le Projet`
