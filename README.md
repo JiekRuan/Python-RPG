@@ -6,7 +6,7 @@
 
 <div align=center>
 
-### Groupe: Jiek Ruan | Hugo Cieplucha | Faustine Charrier | Tom
+### Groupe: Jiek Ruan | Hugo Cieplucha | Faustine Charrier | Tom Cardonnel
 
 </div>
 
