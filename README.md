@@ -6,15 +6,15 @@
 
 <div align=center>
 
-### Groupe: Jiek Ruan | Hugo Cieplucha | Faustine Charrier | Tom Cardonnel
+### Groupe: Jiek Ruan | Hugo Cieplucha | Faustine Charrier | Tom Cardonnel | Roland
 
 </div>
 
 <hr>
 
-## Installation 
+## Installation
 
-Nous avons décider d'utiliser pour le projet *python arcade*, pour le bon fonctionnement du jeu, vous devez installer le package *arcade* sur pycharm ou l'extension python sur Visual Studio Code.
+Nous avons décider d'utiliser pour le projet _python arcade_, pour le bon fonctionnement du jeu, vous devez installer le package _arcade_ sur pycharm ou l'extension python sur Visual Studio Code.
 
 [Voici un lien pour l'installation de Python arcade](https://api.arcade.academy/en/latest/install/index.html)
 

@@ -1,6 +1,55 @@
 {
-  "item_id": "1",
-  "name": "potion de soin",
-  "description": "...",
-  "effect": "user.current_hp += 25\nif user.current_hp > user.max_hp:\n user.current_hp = user.max_hp\n"
+  "Consumable_1":{
+    "item_id": "1",
+    "name": "potion de soin",
+    "description": "...",
+    "effect": "user.current_hp += 25\nif user.current_hp > user.max_hp:\n user.current_hp = user.max_hp\n"
+  },
+  "Consumable_2":{
+    "item_id": "2",
+    "name": "potion de soin +",
+    "description": "...",
+    "effect": "+50"
+  },
+  "Consumable_3":{
+    "item_id": "3",
+    "name": "potion de mana",
+    "description": "...",
+    "effect": "+25"
+  },
+  "Consumable_4":{
+    "item_id": "4",
+    "name": "potion de mana +",
+    "description": "...",
+    "effect": "+50"
+  },
+  "Consumable_5":{
+    "item_id": "5",
+    "name": "fiole de puissance",
+    "description": "...",
+    "effect": "*1.2"
+  },
+  "Consumable_6":{
+    "item_id": "6",
+    "name": "fiole de puissance +",
+    "description": "...",
+    "effect": "*1.5"
+  },
+  "Consumable_7":{
+    "item_id": "7",
+    "name": "fiole de resistance",
+    "description": "...",
+    "effect": "*1.2"
+  },
+  "Consumable_8":{
+    "item_id": "8",
+    "name": "fiole de resistance +",
+    "description": "...",
+    "effect": "*1.5"
+  },
+  "Equipement_1":{
+    "item_id": "9",
+    "name": "basic sword",
+    "type": "physical"
+  }
 }
