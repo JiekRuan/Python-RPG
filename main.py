@@ -4,13 +4,13 @@ import time
 import json
 
 
-CHARACTER_SCALING = 0.5
-TILE_SCALING = 0.5
+CHARACTER_SCALING = 0.8
+TILE_SCALING = 1
 
-SCREEN_WIDTH = 640
-SCREEN_HEIGHT = 640
+SCREEN_WIDTH = 960
+SCREEN_HEIGHT = 960
 SCREEN_TITLE = "Super Jeu de la MORT fait pas Hugo, Faustine, Roland, Jiek, Tom"
-SPRITE_PIXEL_SIZE = 128
+SPRITE_PIXEL_SIZE = 64
 DEFAULT_FONT_SIZE = 10
 GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
 
@@ -55,20 +55,20 @@ class MyGame(arcade.Window):
 
     def setup(self):
         self.player_list = arcade.SpriteList()
-        self.player_sprite = arcade.Sprite("resources/images/animated_characters/zombie/zombie_idle.png",
+        self.player_sprite = arcade.Sprite("asset/images/animated_characters/robot/robot_idle.png",
                                            CHARACTER_SCALING)
 
-        self.player_sprite.center_x = 25
-        self.player_sprite.center_y = 350
+        self.player_sprite.center_x = 160
+        self.player_sprite.center_y = 748
         self.player_list.append(self.player_sprite)
         
         self.load_level(self.current_room)
 
         self.game_over = False
 
-    def load_level(self, level):
+    def load_level(self, room):
         self.tile_map = arcade.load_tilemap(
-            f"resources/maps/{self.current_room['id']}.tmx", scaling=TILE_SCALING
+            f"asset/maps/{self.current_room['id']}.tmx", scaling=TILE_SCALING
         )
 
         # self.end_of_map = self.tile_map.width * GRID_PIXEL_SIZE
@@ -96,15 +96,18 @@ class MyGame(arcade.Window):
 
         self.tile_map.sprite_lists["background"].draw()
         self.tile_map.sprite_lists["GROUND"].draw()
+        self.tile_map.sprite_lists["bottom"].draw()
 
         self.player_list.draw()
+
+        self.tile_map.sprite_lists["top"].draw()
 
         start_x = self.tile_map.height * GRID_PIXEL_SIZE - 5
         start_y = self.tile_map.width * GRID_PIXEL_SIZE
         arcade.draw_text(self.name_map_message,
                          start_x,
                          start_y,
-                         arcade.color.BLACK,
+                         arcade.color.WHITE,
                          DEFAULT_FONT_SIZE * 2,
                          width=SCREEN_WIDTH,
                          align="left",
@@ -122,7 +125,7 @@ class MyGame(arcade.Window):
                 self.fps_message,
                 self.view_left + 10,
                 self.view_bottom + 10,
-                arcade.color.BLACK,
+                arcade.color.WHITE,
                 14,
             )
 
