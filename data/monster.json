@@ -1,0 +1,19 @@
+{
+    "Monster_1": {
+        "name": "slime",
+        "life_point": 80,
+        "stats": {
+            "str": 6,
+            "dex": 4
+        }
+    },
+    "Monster_2": {
+        "name": "Bing chilling slime",
+        "life_point": 111,
+        "stats": {
+            "str": 11,
+            "dex": 11
+        }
+    }
+    
+}
