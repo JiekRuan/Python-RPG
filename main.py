@@ -16,7 +16,7 @@ GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
 
 PLAYER_MOVEMENT_SPEED = 5
 
-with open("map.json", "r") as f:
+with open("data/map.json", "r") as f:
     current_map = json.loads(f.read())
 
 
