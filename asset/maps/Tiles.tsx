@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.9" tiledversion="1.9.2" name="Tiles" tilewidth="64" tileheight="64" tilecount="57" columns="0">
+<tileset version="1.9" tiledversion="1.9.2" name="Tiles" tilewidth="64" tileheight="64" tilecount="60" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="88">
   <image width="64" height="64" source="../images/blocks/cobweb.png"/>
@@ -189,5 +189,14 @@
  </tile>
  <tile id="97">
   <image width="64" height="64" source="../images/blocks/water_9.png"/>
+ </tile>
+ <tile id="99">
+  <image width="64" height="64" source="../images/blocks/lava.png"/>
+ </tile>
+ <tile id="100">
+  <image width="64" height="64" source="../images/blocks/diamond_block.png"/>
+ </tile>
+ <tile id="101">
+  <image width="64" height="64" source="../images/blocks/gold_block.png"/>
  </tile>
 </tileset>
