@@ -37,3 +37,5 @@ Le but du jeu sera de se promener sur la carte ou nous pourrons récuperer des a
 ## `Le Fonctionnement`
 
 </div>
+
+Vous devez vous déplacer sur la carte grâce aux flèches directionnelles.
