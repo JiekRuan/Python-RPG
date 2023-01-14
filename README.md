@@ -18,6 +18,8 @@ Nous avons décider d'utiliser pour le projet _python arcade_, pour le bon fonct
 
 [Voici un lien pour l'installation de Python arcade](https://api.arcade.academy/en/latest/install/index.html)
 
+Pour les importations comme time ou os vous n'avez pas besoin d'installer de package.
+
 <hr>
 
 <div align=center>
