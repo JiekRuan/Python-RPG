@@ -45,3 +45,5 @@ Vous devez vous déplacer sur la carte grâce aux flèches directionnelles.
 <hr>
 
 PS : Nous n'avons pas pu finir la phase de combat, nous avons quand même laissé la fonction "fight.py" si vous voulez avoir des informations sur notre démarche.
+<br>
+Vous ne voyez pas les commits de Hugo et Roland mais ils ont réalisé les dossiers "functions" ainsi que "Classes".
