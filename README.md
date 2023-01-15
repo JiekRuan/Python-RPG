@@ -6,7 +6,7 @@
 
 <div align=center>
 
-### Groupe: Jiek Ruan | Hugo Cieplucha | Faustine Charrier(Nyooote) | Tom Cardonnel(TomuCards) | Roland
+### Groupe: Jiek Ruan | Hugo Cieplucha | Faustine Charrier(Nyoote) | Tom Cardonnel(TomuCard) | Roland
 
 </div>
 
