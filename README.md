@@ -19,6 +19,8 @@ Nous avons décider d'utiliser pour le projet _python arcade_, pour le bon fonct
 [Voici un lien pour l'installation de Python arcade](https://api.arcade.academy/en/latest/install/index.html)
 
 Pour les importations comme time, os ou json, vous n'avez pas besoin d'installer de package.
+<br>
+Faites attention, si votre fenêtre windows est zoomé et non a 100%, il se peut que la fenêtre du jeu rencontre quelque soucis.
 
 <hr>
 
