@@ -1,6 +1,6 @@
 <div align=center>
 
-# Steampunk <br> Python RPG
+#  Python RPG
 
 </div>
 
