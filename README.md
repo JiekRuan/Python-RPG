@@ -43,3 +43,5 @@ Le but du jeu sera de se promener sur la carte ou nous pourrons récuperer des a
 Vous devez vous déplacer sur la carte grâce aux flèches directionnelles.
 
 <hr>
+
+PS : Nous n'avons pas pu finir la phase de combat, nous avons quand même laissé la fonction "fight.py" si vous voulez avoir des informations sur notre démarche.
