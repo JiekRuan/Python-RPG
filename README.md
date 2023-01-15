@@ -43,6 +43,8 @@ Le but du jeu sera de se promener sur la carte ou nous pourrons récuperer des a
 </div>
 
 Vous devez vous déplacer sur la carte grâce aux flèches directionnelles.
+<br>
+Le coffre en haut à droite de l'écran est accessible avec la souris.
 
 <hr>
 
