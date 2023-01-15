@@ -64,7 +64,7 @@
     "id": "AR02",
     "links": {
       "Left": null,
-      "Top": "L03",
+      "Top": null,
       "Right": "E02",
       "Bottom": null
     },
@@ -123,9 +123,9 @@
     "name": "You won't manage",
     "id": "AR06",
     "links": {
-      "Left": "E08",
+      "Left": "M10",
       "Top": null,
-      "Right": null,
+      "Right": "END",
       "Bottom": "BOSS"
     },
     "content": {
@@ -228,8 +228,8 @@
     "name": "",
     "id": "M07",
     "links": {
-      "Left": "E03",
-      "Top": "AR03",
+      "Left": "AR03",
+      "Top": "START",
       "Right": "B02",
       "Bottom": "M08"
     },
@@ -450,13 +450,13 @@
     }
   },
   "L03" : {
-    "name": "UwU",
+    "name": "",
     "id": "L03",
     "links": {
       "Left": null,
       "Top": null,
       "Right": "M04",
-      "Bottom": "AR02"
+      "Bottom": null
     },
     "content": {
       "loot": [],

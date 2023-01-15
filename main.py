@@ -7,8 +7,8 @@ from arcade.gui import UITextureButton
 
 from Classes.Player import Player
 
-from Final_cut.functions.save import save
-from Final_cut.functions.load import load
+from functions.save import save
+from functions.load import load
 
 CHARACTER_SCALING = 0.8
 TILE_SCALING = 1
