@@ -146,6 +146,46 @@ class GameView(arcade.View):
         self.tile_map.sprite_lists["GROUND"].draw()
         self.tile_map.sprite_lists["bottom"].draw()
 
+        # les layers des mes objets, je n'ai pas trouvé autrement
+        # que de faire un layer par item et de le dessiner que si il existe
+        if "sword_1" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["sword_1"].draw()
+        if "sword_2" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["sword_2"].draw()
+        if "sword_3" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["sword_3"].draw()
+        if "sword_4" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["sword_4"].draw()
+        if "sword_5" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["sword_5"].draw()
+        if "sword_6" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["sword_6"].draw()
+        if "sword_7" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["sword_7"].draw()
+        if "shield_1" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["shield_1"].draw()
+        if "shield_2" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["shield_2"].draw()
+        if "shield_3" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["shield_3"].draw()
+        if "shield_4" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["shield_4"].draw()
+        if "shield_5" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["shield_5"].draw()
+        if "shield_6" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["shield_6"].draw()
+        if "staff_1" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["staff_1"].draw()
+        if "staff_2" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["staff_2"].draw()
+        if "staff_3" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["staff_3"].draw()
+        if "staff_4" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["staff_4"].draw()
+        if "staff_5" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["staff_5"].draw()
+        if "staff_6" in self.tile_map.sprite_lists:
+            self.tile_map.sprite_lists["staff_6"].draw()
         self.player_list.draw()
 
         self.tile_map.sprite_lists["top"].draw()
@@ -251,7 +291,105 @@ class GameView(arcade.View):
                 self.name_map_message = self.current_room["name"]
             else:
                 self.player_sprite.center_y += 5
-
+        
+        # Etant donné que je n'ai pas trouvé comment faire autrement, je dis que pour chaque layer d'item, si le player
+        # passe sur l'item il disparait et l'ajoute dans l'inventaire
+        if "sword_1" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["sword_1"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un sword de niveau 1")
+        if "sword_2" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["sword_2"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un sword de niveau 2")
+        if "sword_3" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["sword_3"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un sword de niveau 3")
+        if "sword_4" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["sword_4"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un sword de niveau 4")
+        if "sword_5" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["sword_5"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un sword de niveau 5")
+        if "sword_6" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["sword_6"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un sword de niveau 6")
+        if "sword_7" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["sword_7"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer L'OMEGA SUPER HYPER SWORD DE LA MORT QUI TUE DE NIVEAU 7 ! ! !")
+        if "shield_1" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["shield_1"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un shield de niveau 1")
+        if "shield_2" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["shield_2"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un shield de niveau 2")
+        if "shield_3" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["shield_3"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un shield de niveau 3")
+        if "shield_4" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["shield_4"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un shield de niveau 4")
+        if "shield_5" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["shield_5"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un shield de niveau 5")
+        if "shield_6" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["shield_6"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un shield de niveau 6")
+        if "staff_1" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["staff_1"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un staff de niveau 1")
+        if "staff_2" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["staff_2"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un staff de niveau 2")
+        if "staff_3" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["staff_3"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un staff de niveau 3")
+        if "staff_4" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["staff_4"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un staff de niveau 4")
+        if "staff_5" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["staff_5"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un staff de niveau 5")
+        if "staff_6" in self.tile_map.sprite_lists:
+            items_hit = arcade.check_for_collision_with_list(self.player_sprite, self.tile_map.sprite_lists["staff_6"])
+            for items in items_hit:
+                items.remove_from_sprite_lists()
+                print("Tu viens de récupérer un staff de niveau 6")
+        
         if not self.game_over:
             self.physics_engine.update()
 
