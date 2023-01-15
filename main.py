@@ -9,7 +9,7 @@ TILE_SCALING = 1
 
 SCREEN_WIDTH = 960
 SCREEN_HEIGHT = 960
-SCREEN_TITLE = "Super Jeu de la MORT fait pas Hugo, Faustine, Roland, Jiek, Tom"
+SCREEN_TITLE = "Super Jeu de la MORT fait par Hugo, Faustine, Roland, Jiek, Tom"
 SPRITE_PIXEL_SIZE = 64
 DEFAULT_FONT_SIZE = 10
 GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
@@ -23,18 +23,16 @@ with open("data/map.json", "r") as f:
 class MyGame(arcade.Window):
 
     def __init__(self):
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, resizable=True)
+        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 
         file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(file_path)
 
         self.tile_map = None
-
         self.player_list = None
-
         self.player_sprite = None
-
         self.physics_engine = None
+        self.scene = None
 
         self.view_left = 0
         self.view_bottom = 0
@@ -55,14 +53,34 @@ class MyGame(arcade.Window):
 
     def setup(self):
         self.player_list = arcade.SpriteList()
-        self.player_sprite = arcade.Sprite("asset/images/animated_characters/robot/robot_idle.png",
-                                           CHARACTER_SCALING)
+        self.player_sprite = arcade.AnimatedWalkingSprite()
 
+        self.player_sprite.stand_right_textures = []
+        self.player_sprite.stand_right_textures.append(
+            arcade.load_texture("asset/images/animated_characters/male_person/malePerson_idle.png"))
+
+        self.player_sprite.stand_left_textures = []
+        self.player_sprite.stand_left_textures.append(
+            arcade.load_texture("asset/images/animated_characters/male_person/malePerson_idle.png", mirrored=True))
+
+        self.player_sprite.walk_right_textures = []
+        for i in range(7):
+            self.player_sprite.walk_right_textures.append(
+                arcade.load_texture(f"asset/images/animated_characters/male_person/malePerson_walk{i}.png"))
+
+        self.player_sprite.walk_left_textures = []
+        for i in range(7):
+            self.player_sprite.walk_left_textures.append(
+                arcade.load_texture(f"asset/images/animated_characters/male_person/malePerson_walk{i}.png", mirrored=True))
+
+        self.player_sprite.scale = CHARACTER_SCALING
         self.player_sprite.center_x = 160
         self.player_sprite.center_y = 748
         self.player_list.append(self.player_sprite)
         
         self.load_level(self.current_room)
+
+        self.scene = arcade.Scene.from_tilemap(self.tile_map)
 
         self.game_over = False
 
@@ -71,7 +89,6 @@ class MyGame(arcade.Window):
             f"asset/maps/{self.current_room['id']}.tmx", scaling=TILE_SCALING
         )
 
-        # self.end_of_map = self.tile_map.width * GRID_PIXEL_SIZE
         self.end_of_map_right = self.tile_map.width * GRID_PIXEL_SIZE
         self.end_of_map_left = 0
         self.end_of_map_top = self.tile_map.height * GRID_PIXEL_SIZE
@@ -87,7 +104,7 @@ class MyGame(arcade.Window):
             self.view_left = 0
             self.view_bottom = 0
 
-        print(self.current_room["id"])
+        print("Le player est dans la room : ", self.current_room["id"])
 
     def on_draw(self):
         self.frame_count += 1
@@ -97,6 +114,7 @@ class MyGame(arcade.Window):
         self.tile_map.sprite_lists["background"].draw()
         self.tile_map.sprite_lists["GROUND"].draw()
         self.tile_map.sprite_lists["bottom"].draw()
+        self.tile_map.sprite_lists["items"].draw()
 
         self.player_list.draw()
 
@@ -201,8 +219,17 @@ class MyGame(arcade.Window):
             else:
                 self.player_sprite.center_y += 5
 
+        items_hit = arcade.check_for_collision_with_list(
+            self.player_sprite, self.tile_map.sprite_lists["items"]
+        )
+        for items in items_hit:
+            items.remove_from_sprite_lists()
+            print(self.tile_map.sprite_lists["items"])
+
         if not self.game_over:
             self.physics_engine.update()
+
+        self.player_list.update_animation()
 
 
 def main():
