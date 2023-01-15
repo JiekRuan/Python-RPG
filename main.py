@@ -100,12 +100,38 @@ class GameView(arcade.View):
 
     def setup(self):
         self.player_list = arcade.SpriteList()
-        self.player_sprite = arcade.Sprite("Assets/images/animated_characters/robot/robot_idle.png", CHARACTER_SCALING)
 
+        # Animation du player
+        self.player_sprite = arcade.AnimatedWalkingSprite()
+        self.player_sprite.stand_right_textures = []
+        self.player_sprite.stand_right_textures.append(
+            arcade.load_texture(
+                "Assets/images/animated_characters/male_person/malePerson_idle.png"))
+
+        self.player_sprite.stand_left_textures = []
+        self.player_sprite.stand_left_textures.append(
+            arcade.load_texture(
+                "Assets/images/animated_characters/male_person/malePerson_idle.png", mirrored=True))
+
+        self.player_sprite.walk_right_textures = []
+        for i in range(7):
+            self.player_sprite.walk_right_textures.append(
+                arcade.load_texture(
+                    f"Assets/images/animated_characters/male_person/malePerson_walk{i}.png"))
+
+        self.player_sprite.walk_left_textures = []
+        for i in range(7):
+            self.player_sprite.walk_left_textures.append(
+                arcade.load_texture(
+                    f"Assets/images/animated_characters/male_person/malePerson_walk{i}.png", mirrored=True))
+
+        # Paramètres du sprite du player
+        self.player_sprite.scale = CHARACTER_SCALING
         self.player_sprite.center_x = 160
         self.player_sprite.center_y = 748
         self.player_list.append(self.player_sprite)
 
+        # Charge la room du start
         self.load_level(self.current_room)
 
         self.game_over = False
@@ -392,6 +418,8 @@ class GameView(arcade.View):
         
         if not self.game_over:
             self.physics_engine.update()
+
+        self.player_list.update_animation()
 
     def inventory_button_clicked(self, event):
         self.window.show_view(self.window.inventory_view)
